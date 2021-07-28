@@ -31,6 +31,7 @@ export default class CCInput extends Component {
     validColor: PropTypes.string,
     invalidColor: PropTypes.string,
     placeholderColor: PropTypes.string,
+    isScreenSmall: PropTypes.bool,
 
     onFocus: PropTypes.func,
     onChange: PropTypes.func,
@@ -46,6 +47,7 @@ export default class CCInput extends Component {
     containerStyle: {},
     inputStyle: {},
     labelStyle: {},
+    isScreenSmall: false,
     onFocus: () => {},
     onBlur: () => {},
     onChange: () => {},
@@ -71,7 +73,7 @@ export default class CCInput extends Component {
   render() {
     const { label, value, placeholder, status, keyboardType,
             containerStyle, inputStyle, labelStyle,
-            validColor, invalidColor, placeholderColor,
+            validColor, invalidColor, placeholderColor, isScreenSmall,
             additionalInputProps } = this.props;
     return (
       <TouchableOpacity onPress={this.focus}
@@ -92,6 +94,7 @@ export default class CCInput extends Component {
             ]}
             underlineColorAndroid={"transparent"}
             placeholderTextColor={placeholderColor}
+            isScreenSmall={isScreenSmall}
             placeholder={placeholder}
             value={value}
             onFocus={this._onFocus}
